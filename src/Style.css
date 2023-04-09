@@ -14,16 +14,28 @@
   color: #f5f5f5;
 }
 
+.content {
+  background: url("./assets/images/restaurant.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-width: 100vw;
+  min-height: 100vh;
+  overflow: auto;
+  position: relative;
+}
+
 .header {
   /* adjust font size for header */
-  font-size: 1.5rem;
+  font-size: 2rem;
   /* make the background of the header semi-transparent and dark */
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 0.75);
   /* make the header take up the full width of the page */
   width: 100%;
   /* center the text */
   display: grid;
-  grid-template-columns: 1fr 20rem 1fr;
+  grid-template-columns: 1fr 25rem 1fr;
   /* style the rows to be one large over one just large enough for the list */
   grid-template-rows: 1fr 5rem;
 }
@@ -38,20 +50,25 @@ li {
   /* add some space between the list items */
   margin: 0 1rem;
   /* add some padding so there is spabe between the li and the bottom of the header */
+  transition: transform 0.2s ease-in-out;
 }
 li a {
   /* style the links in the list */
   text-decoration: none;
 }
-li a:hover {
-  /* style the links with an underline when hovered over, will do this with a border to create distance between the text and the border */
+li:hover {
+  /* add a transform effect where the hovered link grows slightly and bounces upwards */
+  transform: scale(1.1) translateY(-0.5rem);
+}
+.selected {
+  /* style the selected link with a border-bottom */
   border-bottom: 1px solid #f5f5f5;
   padding-bottom: 0.5rem;
 }
 /* position the header h1 and ul to begin in the second column of the grid */
 .header h1 {
   /* set the header font size */
-  font-size: 5rem;
+  font-size: 7rem;
   /* set t he h1 font to something curvy and evoking fancy italian imagery */
   font-family: "Tangerine", cursive;
   padding-top: 1.5rem;
@@ -65,4 +82,71 @@ li a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.main-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-view-content {
+  /* set the background of the main view to be semi-transparent and dark */
+  background-color: rgba(0, 0, 0, 0.75);
+  /* set the width of the main view to be 50% of the page */
+  width: 50%;
+  /* set the height of the main view to be 50% of the page */
+  height: 50%;
+  /* add a minor curve border radius */
+  border-radius: 5px;
+  /* set the border to be 1px solid white */
+  border: 1px solid black;
+  /* set the padding to be 1rem */
+  padding: 1rem;
+  /* set the margin to be 1rem */
+  margin: 1rem;
+  /* set the text-align to be center */
+  text-align: center;
+  /* line height 1.3 */
+  line-height: 1.3rem;
+  /* set the font size to be 150% of root */
+  font-size: 1.5rem;
+}
+.main-view-content img {
+  max-width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  margin: 1rem;
+}
+.main-view-content p {
+  width: 80%;
+  margin: 0 auto;
+}
+footer {
+  /* set the background of the footer to be semi-transparent and dark */
+  background-color: rgba(0, 0, 0, 0.75);
+  /* set the width of the footer to be 100% of the page */
+  width: 100%;
+  /* set the height of the footer to be 5rem */
+  height: 5rem;
+  /* set the position of the footer to be fixed to the bottom of the page */
+  position: fixed;
+  bottom: 0;
+  /* set the display to be flex */
+  display: flex;
+  /* set the justify-content to be center */
+  justify-content: center;
+  /* set the align-items to be center */
+  align-items: center;
+}
+footer div {
+  text-align: center;
+}
+footer > div > p:nthof-type(1) {
+  /* set the font size to be 150% of root */
+  font-size: 1.5rem;
+  /* set the font family to be Tangerine */
+  font-family: "Tangerine", cursive;
+}
+footer img {
+  max-width: 1rem;
+  border-radius: 50%;
 }

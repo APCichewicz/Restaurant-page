@@ -1,5 +1,7 @@
 require("./style.css");
 // require the tangerine font
+const image = require("./assets/images/friends.jpg");
+const github = require("./assets/images/github-mark.png");
 
 //retrieve the root div from teh document with class content
 const root = document.querySelector(".content");
@@ -65,13 +67,39 @@ function generateMainView() {
   //create the description
   const description = document.createElement("p");
   description.textContent =
-    "Discover the taste of Italy in the heart of the city at Primavera, our upscale Italian restaurant that combines a rustic ambiance with traditional cuisine. From fresh pasta to wood-fired pizzas, our menu offers an authentic taste of Italy, using only the finest ingredients to create delicious and flavorful dishes. With a warm and inviting atmosphere, our restaurant is the perfect spot for a romantic dinner, a family celebration, or a night out with friends. Come experience the flavors of Italy at Primavera.";
+    "Primavera: Rustic upscale Italian restaurant, authentic cuisine, fresh pasta, wood-fired pizza, finest ingredients, warm ambiance for romantic dinners, family celebrations, and nights out.";
   mainViewContent.appendChild(description);
   //create the image
-  const image = document.createElement("img");
-  image.src = "";
-  image.alt = "Italian restaurant";
-  mainViewContent.appendChild(image);
+  const friendImage = document.createElement("img");
+  friendImage.src = image;
+  friendImage.alt = "image of friends eating at Primavera";
+  mainViewContent.appendChild(friendImage);
+
+  //add the selected class to the homeanchor tag
+  homeAnchor.classList.add("selected");
 }
+
+// end the page with a footer
+const footer = document.createElement("footer");
+footer.classList.add("footer");
+root.appendChild(footer);
+//create the footer content
+const footerContent = document.createElement("div");
+footerContent.classList.add("footer-content");
+footer.appendChild(footerContent);
+//create the footer text
+const footerText = document.createElement("p");
+footerText.textContent = "Primavera Restaurant";
+footerContent.appendChild(footerText);
+//add the copyright message at the bottom of the footer
+const footerCopy = document.createElement("p");
+// copywright 20234 Andrew Cichewicz and ended with the github symbol which is a link to github
+footerCopy.innerHTML =
+  "&copy; 2021 Andrew Cichewicz <a href='https://github.com/APCichewicz'></a>";
+const githubImage = document.createElement("img");
+githubImage.src = github;
+githubImage.alt = "github logo";
+footerCopy.querySelector("a").appendChild(githubImage);
+footerContent.appendChild(footerCopy);
 
 generateMainView();
