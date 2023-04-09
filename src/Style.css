@@ -1,0 +1,68 @@
+/* import the tangerine font from same folder .\tangerine */
+@font-face {
+  font-family: "Tangerine";
+  src: url("./assets/fonts/tangerine/Tangerine-Regular.ttf");
+}
+
+/* reset styles for the webpage */
+:root,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* to accomodate the page's dark theme, we will set the text-color universally to a slight offwhite */
+  color: #f5f5f5;
+}
+
+.header {
+  /* adjust font size for header */
+  font-size: 1.5rem;
+  /* make the background of the header semi-transparent and dark */
+  background-color: rgba(0, 0, 0, 0.85);
+  /* make the header take up the full width of the page */
+  width: 100%;
+  /* center the text */
+  display: grid;
+  grid-template-columns: 1fr 20rem 1fr;
+  /* style the rows to be one large over one just large enough for the list */
+  grid-template-rows: 1fr 5rem;
+}
+ul {
+  display: flex;
+  /* take away the list decoration */
+  list-style: none;
+}
+li {
+  /* make the list items inline */
+  display: inline;
+  /* add some space between the list items */
+  margin: 0 1rem;
+  /* add some padding so there is spabe between the li and the bottom of the header */
+}
+li a {
+  /* style the links in the list */
+  text-decoration: none;
+}
+li a:hover {
+  /* style the links with an underline when hovered over, will do this with a border to create distance between the text and the border */
+  border-bottom: 1px solid #f5f5f5;
+  padding-bottom: 0.5rem;
+}
+/* position the header h1 and ul to begin in the second column of the grid */
+.header h1 {
+  /* set the header font size */
+  font-size: 5rem;
+  /* set t he h1 font to something curvy and evoking fancy italian imagery */
+  font-family: "Tangerine", cursive;
+  padding-top: 1.5rem;
+  text-align: center;
+  grid-column: 2;
+  grid-row: 1;
+}
+.header nav {
+  grid-column-start: 2;
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
